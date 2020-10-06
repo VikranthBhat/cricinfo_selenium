@@ -6,8 +6,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-# coptions = webdriver.ChromeOptions()
-
 coptions = Options()
 coptions.add_argument("--headless")
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=coptions)
@@ -67,7 +65,7 @@ outdf["batsman"] = batsman
 # driver.page_source
 driver.quit()
 outdf.replace(to_replace="•", value="0")
-outdf.sort_values(by=['overs'], ascending=True)
+outdf.sort_values('overs')
 
 print(outdf)
 
